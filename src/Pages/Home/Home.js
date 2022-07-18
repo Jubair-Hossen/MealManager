@@ -5,7 +5,7 @@ import OverView from './OverView';
 
 const Home = () => {
     return (
-        <Stack direction='row' justifyContent='space-between'>
+        <Stack direction='row' justifyContent='space-between' sx={{ marginBottom: { xs: 8, md: 1 } }}>
             <Sidebar />
             <OverView />
         </Stack>
