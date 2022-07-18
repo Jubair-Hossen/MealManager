@@ -1,6 +1,6 @@
 import React from 'react';
-import { Box, Divider, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import { Inbox, Home, Phone, Favorite, MenuBook, Widgets } from '@mui/icons-material';
+import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
+import { Home, Phone, Favorite, MenuBook, Widgets, LocalGroceryStore } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -17,12 +17,12 @@ const Sidebar = () => {
                                 <ListItemText primary="Over View" />
                             </ListItemButton>
                         </ListItem>
-                        <ListItem disablePadding to='/hom' component={Link}>
+                        <ListItem disablePadding to='/bajarcost' component={Link}>
                             <ListItemButton>
                                 <ListItemIcon>
-                                    <Phone />
+                                    <LocalGroceryStore />
                                 </ListItemIcon>
-                                <ListItemText primary="Phone" />
+                                <ListItemText primary="Bajar Cost" />
                             </ListItemButton>
                         </ListItem>
                         <ListItem disablePadding to='/hom' component={Link}>

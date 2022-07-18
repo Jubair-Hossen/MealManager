@@ -1,13 +1,6 @@
 import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import PhoneIcon from '@mui/icons-material/Phone';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import HomeIcon from '@mui/icons-material/Home';
-import WidgetsIcon from '@mui/icons-material/Widgets';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import { Box } from '@mui/material';
-import { Divider } from '@mui/material';
+import { Home, Favorite, MenuBook, Widgets, LocalGroceryStore } from '@mui/icons-material/';
+import { Box, Divider, Tabs, Tab } from '@mui/material';
 import { Link } from "react-router-dom";
 
 export default function BottomBar() {
@@ -26,6 +19,7 @@ export default function BottomBar() {
     const style2 = {
         background: 'white',
         position: 'fixed',
+        zIndex: 50,
         bottom: 0,
         left: 0,
         right: 0,
@@ -35,11 +29,11 @@ export default function BottomBar() {
         <Box sx={style2}>
             <Divider />
             <Tabs sx={style} value={value} onChange={handleChange} aria-label="icon label tabs example">
-                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<HomeIcon />} aria-label="Home" to='/' component={Link} />
-                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<PhoneIcon />} aria-label="RECENTS" to='/recents' component={Link} />
-                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<FavoriteIcon />} aria-label="FAVORITES" to='/favorites' component={Link} />
-                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<MenuBookIcon />} aria-label="meals" to='/meals' component={Link} />
-                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<WidgetsIcon />} aria-label="NEARBY" to='/person' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<Home />} aria-label="Home" to='/' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<LocalGroceryStore />} aria-label="BajarCost" to='/bajarcost' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<Favorite />} aria-label="FAVORITES" to='/favorites' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<MenuBook />} aria-label="meals" to='/meals' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<Widgets />} aria-label="NEARBY" to='/person' component={Link} />
             </Tabs>
         </Box>
     );

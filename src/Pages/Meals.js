@@ -1,9 +1,10 @@
 import React from 'react';
+import Sidebar from '../Component/Sidebar';
 
 const Meals = () => {
     return (
         <div>
-            <h1>This is meal page</h1>
+            <Sidebar />
         </div>
     );
 };

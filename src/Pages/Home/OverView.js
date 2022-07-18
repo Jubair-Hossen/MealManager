@@ -14,6 +14,7 @@ const Graph = styled(Box)(({ theme }) => ({
     ...theme.typography.body2,
     padding: theme.spacing(1),
     textAlign: 'center',
+    borderRadius: '6px',
     color: theme.palette.text.secondary,
 }));
 const OverView = () => {

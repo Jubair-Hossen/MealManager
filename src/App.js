@@ -4,12 +4,14 @@ import Navigation from './Component/Navigation';
 import { Route, Routes } from 'react-router-dom';
 import Meals from './Pages/Meals';
 import Home from './Pages/Home/Home';
+import BajarCost from './Pages/BajarCost/BajarCost';
 function App() {
   return (
     <>
       <Navigation />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/bajarcost' element={<BajarCost />} />
         <Route path='/meals' element={<Meals />} />
       </Routes>
     </>
