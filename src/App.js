@@ -3,7 +3,7 @@ import './App.css';
 import Navigation from './Component/Navigation';
 import { Route, Routes } from 'react-router-dom';
 import Meals from './Pages/Meals';
-import Home from './Pages/Home';
+import Home from './Pages/Home/Home';
 function App() {
   return (
     <>

@@ -3,7 +3,7 @@ import React from 'react';
 const Meals = () => {
     return (
         <div>
-            This is meal page
+            <h1>This is meal page</h1>
         </div>
     );
 };

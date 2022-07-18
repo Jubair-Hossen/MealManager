@@ -6,7 +6,6 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import HomeIcon from '@mui/icons-material/Home';
 import WidgetsIcon from '@mui/icons-material/Widgets';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import './BottomBar.css'
 import { Box } from '@mui/material';
 import { Divider } from '@mui/material';
 import { Link } from "react-router-dom";
@@ -22,8 +21,10 @@ export default function BottomBar() {
     const style = {
         maxWidth: '800px',
         marginX: 'auto',
+        justifyContent: 'space-between'
     }
     const style2 = {
+        background: 'white',
         position: 'fixed',
         bottom: 0,
         left: 0,
@@ -34,11 +35,11 @@ export default function BottomBar() {
         <Box sx={style2}>
             <Divider />
             <Tabs sx={style} value={value} onChange={handleChange} aria-label="icon label tabs example">
-                <Tab sx={{ minWidth: '10px' }} icon={<HomeIcon />} aria-label="Home" to='/' component={Link} />
-                <Tab sx={{ minWidth: '10px' }} icon={<PhoneIcon />} aria-label="RECENTS" to='/recents' component={Link} />
-                <Tab sx={{ minWidth: '10px' }} icon={<FavoriteIcon />} aria-label="FAVORITES" to='/favorites' component={Link} />
-                <Tab sx={{ minWidth: '10px' }} icon={<MenuBookIcon />} aria-label="meals" to='/meals' component={Link} />
-                <Tab sx={{ minWidth: '10px' }} icon={<WidgetsIcon />} aria-label="NEARBY" to='/person' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<HomeIcon />} aria-label="Home" to='/' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<PhoneIcon />} aria-label="RECENTS" to='/recents' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<FavoriteIcon />} aria-label="FAVORITES" to='/favorites' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<MenuBookIcon />} aria-label="meals" to='/meals' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<WidgetsIcon />} aria-label="NEARBY" to='/person' component={Link} />
             </Tabs>
         </Box>
     );
