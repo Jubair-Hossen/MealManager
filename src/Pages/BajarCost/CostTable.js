@@ -1,4 +1,4 @@
-import { Box, styled } from '@mui/material';
+import { Box, styled, Typography } from '@mui/material';
 import React from 'react';
 import CostRow from './CostRow';
 
@@ -23,6 +23,9 @@ const CostTable = () => {
 
     return (
         <Box flex='3' p={2}>
+            <Typography variant="h6" gutterBottom component="div">
+                Meal Cost
+            </Typography>
             <Mytable>
                 <thead>
                     <Mytr>

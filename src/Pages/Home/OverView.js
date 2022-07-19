@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Grid, Paper, styled } from '@mui/material';
+import { Box, Grid, Paper, styled, Typography } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -56,10 +56,12 @@ const OverView = () => {
         },
     ];
     return (
-        <Box flex='3' p={1}>
-            <h2>Meal Over View</h2>
+        <Box flex='3' p={1} mt={2}>
+            <Typography variant="h6" gutterBottom component="p">
+                Meal Overview
+            </Typography>
             <Box sx={{ flexGrow: 1 }}>
-                <Grid container spacing={2}>
+                <Grid container spacing={1}>
                     <Grid item xs={6}>
                         <Item>
                             <h3>Total Meals</h3>
@@ -85,10 +87,12 @@ const OverView = () => {
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <h2>Meal Rate Graph (7days)</h2>
+                        <Typography variant="h6" gutterBottom component="p" mt={3}>
+                            Meal Rate Graph (7days)
+                        </Typography>
                         <Graph>
                             <ResponsiveContainer width={'100%'} height={300}>
-                                <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                                <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: -15 }}>
                                     <Line type="monotone" dataKey="mealRate" stroke="#8884d8" />
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="date" />
@@ -100,10 +104,12 @@ const OverView = () => {
                         </Graph>
                     </Grid>
                     <Grid item xs={12} md={6}>
-                        <h2>Bajar Cost Graph (7days)</h2>
+                        <Typography variant="h6" gutterBottom component="div" mt={3}>
+                            Meal Cost Graph (7days)
+                        </Typography>
                         <Graph>
                             <ResponsiveContainer width={'100%'} height={300}>
-                                <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
+                                <LineChart data={data} margin={{ top: 5, right: 20, bottom: 5, left: -10 }}>
                                     <Line type="monotone" dataKey="bajar" stroke="#8884d8" />
                                     <CartesianGrid strokeDasharray="3 3" />
                                     <XAxis dataKey="date" />

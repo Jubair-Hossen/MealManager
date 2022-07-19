@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
-import { Home, Phone, Favorite, MenuBook, Widgets, LocalGroceryStore } from '@mui/icons-material';
+import { Home, Paid, Add, LocalGroceryStore, MenuBook } from '@mui/icons-material';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -17,36 +17,36 @@ const Sidebar = () => {
                                 <ListItemText primary="Over View" />
                             </ListItemButton>
                         </ListItem>
-                        <ListItem disablePadding to='/bajarcost' component={Link}>
+                        <ListItem disablePadding to='/mealcost' component={Link}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <LocalGroceryStore />
                                 </ListItemIcon>
-                                <ListItemText primary="Bajar Cost" />
+                                <ListItemText primary="Meal Cost" />
                             </ListItemButton>
                         </ListItem>
-                        <ListItem disablePadding to='/hom' component={Link}>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    <Favorite />
-                                </ListItemIcon>
-                                <ListItemText primary="Favorite" />
-                            </ListItemButton>
-                        </ListItem>
-                        <ListItem disablePadding to='/meals' component={Link}>
+                        <ListItem disablePadding to='/members' component={Link}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <MenuBook />
                                 </ListItemIcon>
-                                <ListItemText primary="Meals" />
+                                <ListItemText primary="Meal Details" />
                             </ListItemButton>
                         </ListItem>
-                        <ListItem disablePadding to='/hom' component={Link}>
+                        <ListItem disablePadding to='/' component={Link}>
                             <ListItemButton>
                                 <ListItemIcon>
-                                    <Widgets />
+                                    <Paid />
                                 </ListItemIcon>
-                                <ListItemText primary="Menu" />
+                                <ListItemText primary="Deposits" />
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem disablePadding to='/' component={Link}>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <Add />
+                                </ListItemIcon>
+                                <ListItemText primary="Add Meals" />
                             </ListItemButton>
                         </ListItem>
                     </List>
