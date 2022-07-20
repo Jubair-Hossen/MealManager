@@ -33,7 +33,7 @@ const Sidebar = () => {
                                 <ListItemText primary="Meal Details" />
                             </ListItemButton>
                         </ListItem>
-                        <ListItem disablePadding to='/' component={Link}>
+                        <ListItem disablePadding to='/deposite' component={Link}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <Paid />
