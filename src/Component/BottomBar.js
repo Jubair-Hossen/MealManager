@@ -29,10 +29,10 @@ export default function BottomBar() {
         <Box sx={style2}>
             <Divider />
             <Tabs sx={style} value={value} onChange={handleChange} aria-label="icon label tabs example">
-                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<Home />} aria-label="Home" to='/' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<Home />} aria-label="HOME" to='/' component={Link} />
                 <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<LocalGroceryStore />} aria-label="MEALCOST" to='/mealcost' component={Link} />
                 <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<MenuBook />} aria-label="MEMBERS" to='/members' component={Link} />
-                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<Paid />} aria-label="meals" to='/' component={Link} />
+                <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<Paid />} aria-label="DEPOSITE" to='/deposite' component={Link} />
                 <Tab sx={{ minWidth: '10px', width: '20%', margin: 'auto' }} icon={<Add />} aria-label="NEARBY" to='/' component={Link} />
             </Tabs>
         </Box>

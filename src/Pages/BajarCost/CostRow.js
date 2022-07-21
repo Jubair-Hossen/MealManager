@@ -17,7 +17,7 @@ const CostRow = ({ row }) => {
                 {row.name}
             </TableCell>
             <TableCell align="right">{row.date}</TableCell>
-            <TableCell align="right">{row.cost}</TableCell>
+            <TableCell align="right">{row.cost} &#2547;</TableCell>
             <TableCell align="right" sx={{ width: '25%' }}>
                 <Stack direction={row} justifyContent='end'>
                     <IconButton aria-label="delete">

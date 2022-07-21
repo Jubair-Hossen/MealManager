@@ -1,13 +1,14 @@
 import React from 'react';
 import { Box, Grid, Paper, styled, Typography } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import HomeLoading from './HomeLoading';
 
 const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#f1f1f1',
+    backgroundColor: theme.palette.primary.main,
     ...theme.typography.body2,
-    padding: theme.spacing(1),
+    padding: theme.spacing(2),
     textAlign: 'center',
-    color: theme.palette.text.secondary,
+    color: '#fff',
 }));
 const Graph = styled(Box)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#f1f1f1',
@@ -55,6 +56,13 @@ const OverView = () => {
             bajar: 500,
         },
     ];
+    const loading = false;
+
+    if (loading) {
+        return (
+            <HomeLoading />
+        );
+    }
     return (
         <Box flex='3' p={1} mt={2}>
             <Typography variant="h6" gutterBottom component="p">
@@ -64,26 +72,42 @@ const OverView = () => {
                 <Grid container spacing={1}>
                     <Grid item xs={6}>
                         <Item>
-                            <h3>Total Meals</h3>
-                            <p>1204.50</p>
+                            <Typography variant="h6" component="p">
+                                Total Meals
+                            </Typography>
+                            <Typography variant="p" gutterBottom component="p">
+                                1204.50
+                            </Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={6}>
                         <Item>
-                            <h3>Total Cost</h3>
-                            <p>24090 tk</p>
+                            <Typography variant="h6" component="p">
+                                Total Cost
+                            </Typography>
+                            <Typography variant="p" gutterBottom component="p">
+                                34090 &#x09F3;
+                            </Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={6}>
                         <Item>
-                            <h3>Meal Rate</h3>
-                            <p>20 tk</p>
+                            <Typography variant="h6" component="p">
+                                Meal Rate
+                            </Typography>
+                            <Typography variant="p" gutterBottom component="p">
+                                20 &#x09F3;
+                            </Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={6}>
                         <Item>
-                            <h3>Meal Ballance</h3>
-                            <p>200000 tk</p>
+                            <Typography variant="h6" component="p">
+                                Meal Ballance
+                            </Typography>
+                            <Typography variant="p" gutterBottom component="p">
+                                3000 &#x09F3;
+                            </Typography>
                         </Item>
                     </Grid>
                     <Grid item xs={12} md={6}>

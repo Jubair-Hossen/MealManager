@@ -1,108 +1,70 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import React from 'react';
+import { Avatar, Box, Button, Divider, Menu, MenuItem, Stack, TextField, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+import './CustomStyle.css'
+import { ManageAccounts } from '@mui/icons-material';
 
-const settings = ['Profile', 'Logout'];
-const pages = ['about', 'contact']
+const navStyle = {
+    position: 'sticky',
+    top: 0,
+    left: 0,
+    width: '100%',
+    zIndex: '500',
+    background: 'white',
+    '&::after': {
+        content: '""',
+        display: 'block',
+        clear: 'both',
+    }
+}
 
 const TopBar = () => {
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
     };
-
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
+    const handleClose = () => {
+        setAnchorEl(null);
     };
 
     return (
-        <AppBar position="sticky">
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            flexGrow: 1,
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
+        <Box sx={{ ...navStyle }} component={'header'}>
+            <Stack component={'nav'} spacing={24} direction='row' justifyContent='space-between' sx={{ py: 2, px: { xs: 1, md: 4 } }}>
+                <Stack direction='row' spacing={1} alignItems='center' to='/' component={Link}>
+                    <Typography variant="h6" component={'p'}>
+                        <ManageAccounts />
                     </Typography>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        href=""
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'flex', md: 'none' },
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'inherit',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
+                    <Typography variant="h6">
+                        MealManager
                     </Typography>
+                </Stack>
+                <TextField size='small' sx={{ display: { xs: 'none', md: 'block' } }} fullWidth label="Search Member" id="fullWidth" />
+                <Box>
+                    <Avatar sx={{ cursor: 'pointer' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                </Box>
+            </Stack>
+            <Divider />
 
-                    <Box sx={{ flexGrow: 0 }}>
-                        <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-                            </IconButton>
-                        </Tooltip>
-                        <Menu
-                            sx={{ mt: '45px' }}
-                            id="menu-appbar"
-                            anchorEl={anchorElUser}
-                            anchorOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'right',
-                            }}
-                            open={Boolean(anchorElUser)}
-                            onClose={handleCloseUserMenu}
-                        >
-                            {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                                    <Typography textAlign="center">{setting}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+            {/* <div>
+                <Menu
+                    id="basic-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    sx={{ mt: 1 }}
+                    MenuListProps={{
+                        'aria-labelledby': 'basic-button',
+                    }}
+                >
+                    <MenuItem onClick={handleClose}>Profile</MenuItem>
+                    <MenuItem onClick={handleClose}>My account</MenuItem>
+                    <MenuItem onClick={handleClose}>Logout</MenuItem>
+                </Menu>
+            </div> */}
+        </Box>
     );
 };
+
 export default TopBar;
