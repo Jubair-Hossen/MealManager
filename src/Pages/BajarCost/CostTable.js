@@ -35,7 +35,7 @@ export default function CostTable() {
                             <TableCell>Name</TableCell>
                             <TableCell align="right">Date</TableCell>
                             <TableCell align="right">Cost</TableCell>
-                            <TableCell align="right">Action</TableCell>
+                            <TableCell align="right">Edit/Delete</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>

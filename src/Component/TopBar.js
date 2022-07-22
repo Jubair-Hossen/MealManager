@@ -30,40 +30,45 @@ const TopBar = () => {
     };
 
     return (
-        <Box sx={{ ...navStyle }} component={'header'}>
-            <Stack component={'nav'} spacing={24} direction='row' justifyContent='space-between' sx={{ py: 2, px: { xs: 1, md: 4 } }}>
-                <Stack direction='row' spacing={1} alignItems='center' to='/' component={Link}>
-                    <Typography variant="h6" component={'p'}>
-                        <ManageAccounts />
-                    </Typography>
-                    <Typography variant="h6">
-                        MealManager
-                    </Typography>
+        <>
+            <Box sx={{ ...navStyle }} component={'header'}>
+                <Stack component={'nav'} direction='row' justifyContent='space-between' sx={{ py: { xs: 1, md: 2 }, px: { xs: 1, md: 4 } }}>
+                    <Stack direction='row' spacing={1} alignItems='center' to='/' component={Link}>
+                        <Typography variant="h6" component={'p'}>
+                            <ManageAccounts />
+                        </Typography>
+                        <Typography variant="h6">
+                            MealManager
+                        </Typography>
+                    </Stack>
+                    <Box>
+                        <Avatar
+                            id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            onClick={handleClick}
+                            sx={{ cursor: 'pointer' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                    </Box>
                 </Stack>
-                <TextField size='small' sx={{ display: { xs: 'none', md: 'block' } }} fullWidth label="Search Member" id="fullWidth" />
-                <Box>
-                    <Avatar sx={{ cursor: 'pointer' }} alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-                </Box>
-            </Stack>
-            <Divider />
+                <Divider />
+            </Box>
 
-            {/* <div>
-                <Menu
-                    id="basic-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    sx={{ mt: 1 }}
-                    MenuListProps={{
-                        'aria-labelledby': 'basic-button',
-                    }}
-                >
-                    <MenuItem onClick={handleClose}>Profile</MenuItem>
-                    <MenuItem onClick={handleClose}>My account</MenuItem>
-                    <MenuItem onClick={handleClose}>Logout</MenuItem>
-                </Menu>
-            </div> */}
-        </Box>
+            <Menu
+                id="basic-menu"
+                sx={{ mt: 1 }}
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+                MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                }}
+            >
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>My account</MenuItem>
+                <MenuItem onClick={handleClose}>Logout</MenuItem>
+            </Menu>
+        </>
     );
 };
 

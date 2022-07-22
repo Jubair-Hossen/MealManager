@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Delete, ModeEdit } from '@mui/icons-material';
-import { IconButton, Stack, TableCell, TableRow } from '@mui/material';
+import { Box, CircularProgress, IconButton, Stack, TableCell, TableRow } from '@mui/material';
 import { LoadingButton } from '@mui/lab';
 
 const CostRow = ({ row }) => {
@@ -18,19 +18,19 @@ const CostRow = ({ row }) => {
             </TableCell>
             <TableCell align="right">{row.date}</TableCell>
             <TableCell align="right">{row.cost} &#2547;</TableCell>
-            <TableCell align="right" sx={{ width: '25%' }}>
-                <Stack direction={row} justifyContent='end'>
+            <TableCell align="right" width={'20%'}>
+                <Stack direction={row} justifyContent='end' alignItems='center'>
                     <IconButton aria-label="delete">
                         <ModeEdit />
                     </IconButton>
-                    <LoadingButton
-                        onClick={handleDelete}
-                        loading={loading}
-                        loadingPosition="start"
-                        startIcon={<Delete />}
-                        variant="text"
-                    >
-                    </LoadingButton>
+                    {
+                        loading ?
+                            <CircularProgress size={20} />
+                            :
+                            <IconButton onClick={handleDelete} aria-label="delete">
+                                <Delete />
+                            </IconButton>
+                    }
                 </Stack>
             </TableCell>
         </TableRow>
