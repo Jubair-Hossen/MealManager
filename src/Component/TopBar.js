@@ -3,6 +3,8 @@ import { Avatar, Box, Button, Divider, Menu, MenuItem, Stack, TextField, Typogra
 import { Link } from 'react-router-dom';
 import './CustomStyle.css'
 import { ManageAccounts } from '@mui/icons-material';
+import auth from '../firebase.init';
+import { signOut } from 'firebase/auth';
 
 const navStyle = {
     position: 'sticky',
@@ -28,6 +30,10 @@ const TopBar = () => {
     const handleClose = () => {
         setAnchorEl(null);
     };
+    const handleSignOut = () => {
+        handleClose();
+        signOut(auth);
+    }
 
     return (
         <>
@@ -66,7 +72,7 @@ const TopBar = () => {
             >
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
-                <MenuItem onClick={handleClose}>Logout</MenuItem>
+                <MenuItem onClick={handleSignOut}>Logout</MenuItem>
             </Menu>
         </>
     );
